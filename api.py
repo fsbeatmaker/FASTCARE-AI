@@ -8,7 +8,6 @@ from ia_triagem_avc_infarto.audio_analysis import analyze_audio
 from ia_triagem_avc_infarto.text_analysis import analyze_text
 from ia_triagem_avc_infarto.models.risk_model import calculate_risk
 
-
 # ===============================
 # APP
 # ===============================
@@ -18,7 +17,6 @@ app = FastAPI(
     version="0.2.0"
 )
 
-
 # ===============================
 # MODELOS
 # ===============================
@@ -27,16 +25,15 @@ class TextRequest(BaseModel):
     idade: int | None = None
     sexo: str | None = None
 
-
 # ===============================
-# ENDPOINT TEXTO (AJUSTADO)
+# ENDPOINT TEXTO (JSON)
 # ===============================
 @app.post("/triage/text")
 def triage_text(data: TextRequest):
     text_features = analyze_text(data.text)
 
     resultado = calculate_risk(
-        audio_features={},  # não tem áudio nesse endpoint
+        audio_features=None,  # sem áudio
         text_features=text_features,
         idade=data.idade,
         sexo=data.sexo
@@ -46,7 +43,6 @@ def triage_text(data: TextRequest):
         "resultado": resultado,
         "text_features": text_features
     }
-
 
 # ===============================
 # ENDPOINT TEXTO (FORM)
@@ -60,7 +56,7 @@ def triagem_texto(
     text_features = analyze_text(texto)
 
     resultado = calculate_risk(
-        audio_features={},
+        audio_features=None,
         text_features=text_features,
         idade=idade,
         sexo=sexo
@@ -70,7 +66,6 @@ def triagem_texto(
         "resultado": resultado,
         "text_features": text_features
     }
-
 
 # ===============================
 # ENDPOINT AUDIO
@@ -86,7 +81,6 @@ def triagem_audio(audio: UploadFile = File(...)):
     os.remove(audio_path)
 
     return audio_features
-
 
 # ===============================
 # ENDPOINT COMPLETO (TEXTO + ÁUDIO)
@@ -120,7 +114,6 @@ def triagem(
         "audio_features": audio_features,
         "text_features": text_features
     }
-
 
 # ===============================
 # FRONTEND
