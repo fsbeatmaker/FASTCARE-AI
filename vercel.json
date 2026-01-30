@@ -1,0 +1,8 @@
+{
+  "builds": [
+    { "src": "ia_triagem_avc_infarto/app.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "ia_triagem_avc_infarto/app.py" }
+  ]
+}
