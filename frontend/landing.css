@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* SLIDES */
+.slideshow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+/* coloque suas 7 imagens aqui */
+.slide:nth-child(1) { background-image: url("images/slide1.jpg"); }
+.slide:nth-child(2) { background-image: url("images/slide2.jpg"); }
+.slide:nth-child(3) { background-image: url("images/slide3.jpg"); }
+.slide:nth-child(4) { background-image: url("images/slide4.jpg"); }
+.slide:nth-child(5) { background-image: url("images/slide5.jpg"); }
+.slide:nth-child(6) { background-image: url("images/slide6.jpg"); }
+.slide:nth-child(7) { background-image: url("images/slide7.jpg"); }
+
+.slide.active {
+    opacity: 1;
+}
+
+/* FILTRO AZUL MARINHO */
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 37, 64, 0.75);
+    z-index: 1;
+}
+
+/* CONTEÚDO */
+.content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.start-btn {
+    padding: 16px 50px;
+    font-size: 1.2rem;
+    border-radius: 40px;
+    background: #2ec4b6;
+    color: #003049;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.start-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(46, 196, 182, 0.4);
+}
+

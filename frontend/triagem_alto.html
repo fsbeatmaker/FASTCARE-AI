@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>FastCare AI | Risco Alto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e63946, #ff4b5c);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 { font-size: 4rem; margin-bottom: 20px; }
+        p { font-size: 1.5rem; max-width: 600px; margin-bottom: 40px; }
+        .btn-home {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            border: none;
+            background: #f1faee;
+            color: #e63946;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .btn-home:hover { transform: scale(1.05); }
+        .emoji { font-size: 4rem; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="emoji">🚨</div>
+    <h1>Risco Alto Detectado</h1>
+    <p>⚠️ Sinais indicam risco alto. Procure atendimento médico imediato ou ligue para o SAMU (192).</p>
+    <button class="btn-home" onclick="window.location.href='/'">Voltar para a triagem</button>
+</body>
+</html>
+

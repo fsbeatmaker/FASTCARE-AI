@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>FastCare AI | Triagem Preventiva</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header class="hero">
+    <h1>FastCare AI</h1>
+    <p>
+        Triagem preventiva para AVC e Infarto<br>
+        via <strong>voz</strong> e <strong>texto</strong>
+    </p>
+    <button class="cta">Iniciar Triagem</button>
+</header>
+
+<section class="cards">
+    <div class="card">
+        <h2>🎙️ Análise por Voz</h2>
+        <p>Detecta padrões sutis de fala associados a risco neurológico.</p>
+    </div>
+
+    <div class="card">
+        <h2>📝 Análise por Texto</h2>
+        <p>Avalia sintomas descritos e sinais semânticos de alerta.</p>
+    </div>
+
+    <div class="card">
+        <h2>❤️ Risco Integrado</h2>
+        <p>Modelo preventivo que cruza dados e gera alerta clínico.</p>
+    </div>
+</section>
+<section class="triage">
+    <h2>Simulação de Triagem</h2>
+
+    <textarea id="textoInput" placeholder="Descreva seus sintomas..."></textarea>
+
+    <input type="number" id="idadeInput" placeholder="Idade">
+    <select id="sexoInput">
+        <option value="">Sexo</option>
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+    </select>
+
+    <button class="secondary" id="btnTexto">Analisar Texto</button>
+
+    <p class="disclaimer">
+        ⚠️ Esta ferramenta não substitui atendimento médico.
+    </p>
+</section>
+
+<footer>
+    <p>FastCare AI © 2026 — IA a serviço da prevenção</p>
+</footer>
+
+<!-- Chatbot Widget -->
+<div id="chatbot">
+  <div id="chat-header">💬 FastCare AI</div>
+  <div id="chat-body"></div>
+  <input type="text" id="chat-input" placeholder="Escreva aqui..." />
+  <button id="chat-send">Enviar</button>
+</div>
+
+<script src="app.js"></script>
+<script src="chatbot.js"></script>
+
+</body>
+</html>
