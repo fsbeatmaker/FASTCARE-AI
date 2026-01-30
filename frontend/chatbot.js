@@ -3,7 +3,7 @@ const chatInput = document.getElementById("chat-input");
 const chatSend = document.getElementById("chat-send");
 
 // Substitua pelo seu API Key do OpenRouter
-const OPENROUTER_API_KEY = "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";
+const OPENROUTER_API_KEY = "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";
 
 chatSend.addEventListener("click", async () => {
     const userMessage = chatInput.value.trim();
