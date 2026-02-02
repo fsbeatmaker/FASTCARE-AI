@@ -18,6 +18,15 @@ from ia_triagem_avc_infarto.services.chatbot_service import chat_with_llm
 def root():
     return {"status": "FastCare AI online"}
 
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route("/api/api", methods=["POST"])
+def chat():
+    return jsonify({"reply": "funcionando"})
+
+
 # ===============================
 # APP
 # ===============================
