@@ -26,16 +26,6 @@ app = Flask(__name__)
 def chat():
     return jsonify({"reply": "funcionando"})
 
-
-# ===============================
-# APP
-# ===============================
-app = FastAPI(
-    title="FastCare AI",
-    description="IA de triagem preventiva para AVC e Infarto",
-    version="0.2.0"
-)
-
 # ===============================
 # MODELOS
 # ===============================
