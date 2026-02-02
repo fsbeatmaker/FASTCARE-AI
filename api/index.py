@@ -1,5 +1,5 @@
-from fastapi import FastAPI
 app = FastAPI()
+from fastapi import FastAPI
 
 from pydantic import BaseModel
 import shutil
@@ -14,6 +14,9 @@ from ia_triagem_avc_infarto.models.risk_model import calculate_risk
 # ===============================
 from ia_triagem_avc_infarto.services.chatbot_service import chat_with_llm
 
+@app.get("/")
+def root():
+    return {"status": "FastCare AI online"}
 
 # ===============================
 # APP

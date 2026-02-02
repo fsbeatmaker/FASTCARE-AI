@@ -1,8 +1,8 @@
+fastapi
 numpy
 librosa
 scikit-learn
 spacy
-soundfile
-fastapi 
+soundfile 
 uvicorn
 python-multipart
