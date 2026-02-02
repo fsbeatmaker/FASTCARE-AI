@@ -1,5 +1,6 @@
-from fastapi import FastAPI, UploadFile, File, Form
-from fastapi.staticfiles import StaticFiles
+from fastapi import FastAPI
+app = FastAPI()
+
 from pydantic import BaseModel
 import shutil
 import os
@@ -7,6 +8,12 @@ import os
 from ia_triagem_avc_infarto.audio_analysis import analyze_audio
 from ia_triagem_avc_infarto.text_analysis import analyze_text
 from ia_triagem_avc_infarto.models.risk_model import calculate_risk
+
+# ===============================
+# CHATBOT
+# ===============================
+from ia_triagem_avc_infarto.services.chatbot_service import chat_with_llm
+
 
 # ===============================
 # APP
@@ -114,6 +121,17 @@ def triagem(
         "audio_features": audio_features,
         "text_features": text_features
     }
+
+# ===============================
+# ENDPOINT CHATBOT
+# ===============================
+@app.post("/chat")
+def chat(prompt: str = Form(...)):
+    return chat_with_llm(prompt)
+
+
+
+    return response.json()
 
 # ===============================
 # FRONTEND

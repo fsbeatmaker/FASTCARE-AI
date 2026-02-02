@@ -1,24 +1,10 @@
 {
-  "builds": [
-    { "src": "ia_triagem_avc_infarto/app.py", "use": "@vercel/python" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "ia_triagem_avc_infarto/app.py" }
-  ]
-}
-
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "ia_triagem_avc_infarto/app.py",
-      "use": "@vercel/python"
+  "functions": {
+    "api/index.py": {
+      "runtime": "python3.11"
     }
-  ],
+  },
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "ia_triagem_avc_infarto/app.py"
-    }
+    { "src": "/(.*)", "dest": "api/index.py" }
   ]
 }
