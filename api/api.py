@@ -1,5 +1,5 @@
-app = FastAPI()
 from fastapi import FastAPI
+app = FastAPI()
 
 from pydantic import BaseModel
 import shutil
@@ -144,12 +144,3 @@ def chat(prompt: str = Form(...)):
 
 
     return response.json()
-
-# ===============================
-# FRONTEND
-# ===============================
-app.mount(
-    "/",
-    StaticFiles(directory="ia_triagem_avc_infarto/frontend", html=True),
-    name="frontend"
-)
